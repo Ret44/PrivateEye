@@ -7,12 +7,12 @@ using Assets.Scripts;
 
 public class EyeHelperScript : MonoBehaviour, IGazeListener {
 
+	public static bool fakeMouseMode = true;
 	public TextMesh PositionText;
 
 	private GazeDataValidator gazeUtils;
 	// Use this for initialization
-	void Start () {
-		
+	void Start () {		
 		gazeUtils = new GazeDataValidator(30);
 		GazeManager.Instance.AddGazeListener (this);
 	}
@@ -33,5 +33,18 @@ public class EyeHelperScript : MonoBehaviour, IGazeListener {
 			this.transform.position = planeCoord;
 			PositionText.text = "("+planeCoord.x+","+planeCoord.y+")";
 		}
+	}
+
+	public static Vector3 getGazePosition(){
+		if(fakeMouseMode){
+			var mousePos = Input.mousePosition;
+			return new Vector3(mousePos.x, mousePos.y, 0f);
+		}else{
+			return new Vector3(0f,0f, 0f);
+		}
+	}
+
+	public static float getDistanceFromPosition(Vector3 position){
+		return Vector3.Distance(Camera.main.WorldToScreenPoint(position), getGazePosition());
 	}
 }
