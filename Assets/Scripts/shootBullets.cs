@@ -42,6 +42,7 @@ public class shootBullets : MonoBehaviour {
 		if(Input.GetKey(KeyCode.Space)){
 			if(Time.time > lastShotTime + shootDelay){
 				shoot ();
+				lastShotTime = Time.time;
 			}
 		}
 
@@ -49,6 +50,7 @@ public class shootBullets : MonoBehaviour {
 
 
 	void shoot(){
-		//Instantiate(blastPrefab, transform.position, Quaternion.identity);
+		var blast = Instantiate(blastPrefab, transform.position, Quaternion.identity) as GameObject;
+		blast.rigidbody2D.velocity = new Vector2(4f, 0f);
 	}
 }
