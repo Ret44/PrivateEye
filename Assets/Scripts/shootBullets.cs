@@ -9,7 +9,7 @@ public class shootBullets : MonoBehaviour {
 	//movement config
 	private float vx = 0f;
 	private float vy = 0f;
-	private float acc = 1.3f;
+	private float acc = 1.9f;
 	private float damp = 0.76f;
 	private float shootDelay = 0.4f;
 	
@@ -53,6 +53,6 @@ public class shootBullets : MonoBehaviour {
 
 	void shoot(){
 		var blast = Instantiate(blastPrefab, transform.position, Quaternion.identity) as GameObject;
-		blast.rigidbody2D.velocity = new Vector2(4f, 0f);
+		blast.rigidbody2D.velocity = new Vector2(9f, 0f);
 	}
 }
