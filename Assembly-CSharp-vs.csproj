@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Gameplay.cs" />
      <Compile Include="Assets\Scripts\CalibCamera.cs" />
      <Compile Include="Assets\Scripts\EyeHelperScript.cs" />
      <Compile Include="Assets\Scripts\GazeCamera.cs" />
