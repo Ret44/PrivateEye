@@ -5,17 +5,25 @@ public class rock : MonoBehaviour {
 
 	//config
 	private float sensDistance = 100f;
-
+	private float minSpeed = 0.7f;
+	private float maxSpeed - 0.9f;
+	
 	//references
 	private SpriteRenderer rockSprite;
+
+	//real variables
+	private float speed; 
 
 	// Use this for initialization
 	void Start () {
 		rockSprite = gameObject.GetComponent<SpriteRenderer>();
+		speed = Random.Range(minSpeed, maxSpeed);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		transform.position += new Vector3 (-speed, 0f, 0f) * Time.deltaTime;
 
 		if(EyeHelperScript.getDistanceFromPosition(transform.position) < sensDistance){
 			rockSprite.color = Color.red;
