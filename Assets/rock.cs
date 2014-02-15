@@ -14,6 +14,7 @@ public class rock : MonoBehaviour {
 	//real variables
 	private float speed; 
 	private int hp;
+	public bool cheating;
 
 	// Use this for initialization
 	void Start () {
@@ -24,13 +25,13 @@ public class rock : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		transform.position += new Vector3 (-speed, 0f, 0f) * Time.deltaTime;
-
 		if(EyeHelperScript.getDistanceFromPosition(transform.position) < sensDistance){
 			rockSprite.color = Color.red;
+			cheating = true;
 		}else{
 			rockSprite.color = Color.white;
+			cheating = false;
 		}
 	}
 
