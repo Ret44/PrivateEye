@@ -29,6 +29,7 @@ public class EyeHelperScript : MonoBehaviour, IGazeListener {
 			Point2D pos = UnityGazeUtils.getGazeCoordsToUnityWindowCoords(gazeCoords);		
 			Vector3 screenPoint = new Vector3((float)pos.X, (float)pos.Y, Camera.main.nearClipPlane + .1f);		
 			Vector3 planeCoord = Camera.main.ScreenToWorldPoint(screenPoint);
+		//	planeCoord.z = 0;
 			this.transform.position = planeCoord;
 			PositionText.text = "("+planeCoord.x+","+planeCoord.y+")";
 		}

@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EyeHelperScript.cs">
+    <Files>
+      <File FileName="Assets\Scripts\EyeHelperScript.cs" Line="31" Column="69" />
+      <File FileName="Assets\Scripts\GazeCamera.cs" Line="103" Column="31" />
+      <File FileName="Assets\Scripts\UnityGazeUtils.cs" Line="19" Column="9" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
