@@ -4,7 +4,7 @@ using System.Collections;
 public class rock : MonoBehaviour {
 
 	//config
-	private float sensDistance = 100f;
+	private float sensDistance = 200f;
 
 	//references
 	private SpriteRenderer rockSprite;
