@@ -4,10 +4,15 @@ using System.Collections;
 public class rock : MonoBehaviour {
 
 	//config
+<<<<<<< HEAD
 	private float sensDistance = 100f;
 	private float minSpeed = 0.7f;
 	private float maxSpeed - 0.9f;
 	
+=======
+	private float sensDistance = 200f;
+
+>>>>>>> 3605bb1bde3bd2d4629b2997d5f93b80c4d6ddc7
 	//references
 	private SpriteRenderer rockSprite;
 

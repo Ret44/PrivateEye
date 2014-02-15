@@ -37,7 +37,9 @@ public class shootBullets : MonoBehaviour {
 		vy += Input.GetAxis("Vertical") * acc * Time.deltaTime;
 		vy *= damp;
 
-		transform.position += new Vector3(vx, vy, 0f);
+		Vector3 newPos = transform.position + new Vector3(vx, vy, 0f);
+		if (newPos.x > -9.75f && newPos.x < 9.5f && newPos.y > -4.5f && newPos.y < 6.4f)
+						transform.position = newPos;
 
 		if(Input.GetKey(KeyCode.Space)){
 			if(Time.time > lastShotTime + shootDelay){

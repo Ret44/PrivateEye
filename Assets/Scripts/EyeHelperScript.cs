@@ -7,14 +7,17 @@ using Assets.Scripts;
 
 public class EyeHelperScript : MonoBehaviour, IGazeListener {
 
-	public static bool fakeMouseMode = true;
+	public static bool fakeMouseMode = false;
 	public TextMesh PositionText;
-
+	public static EyeHelperScript Instance;
+	private Vector3 lastGazeCoord;
 	private GazeDataValidator gazeUtils;
 	// Use this for initialization
 	void Start () {		
 		gazeUtils = new GazeDataValidator(30);
 		GazeManager.Instance.AddGazeListener (this);
+		lastGazeCoord = Vector3.zero;
+		EyeHelperScript.Instance = this;
 	}
 
 
@@ -29,9 +32,9 @@ public class EyeHelperScript : MonoBehaviour, IGazeListener {
 			Point2D pos = UnityGazeUtils.getGazeCoordsToUnityWindowCoords(gazeCoords);		
 			Vector3 screenPoint = new Vector3((float)pos.X, (float)pos.Y, Camera.main.nearClipPlane + .1f);		
 			Vector3 planeCoord = Camera.main.ScreenToWorldPoint(screenPoint);
-		//	planeCoord.z = 0;
 			this.transform.position = planeCoord;
-			PositionText.text = "("+planeCoord.x+","+planeCoord.y+")";
+			lastGazeCoord = screenPoint;	
+			Debug.Log (lastGazeCoord.ToString());
 		}
 	}
 
@@ -40,7 +43,7 @@ public class EyeHelperScript : MonoBehaviour, IGazeListener {
 			var mousePos = Input.mousePosition;
 			return new Vector3(mousePos.x, mousePos.y, 0f);
 		}else{
-			return new Vector3(0f,0f, 0f);
+			return Instance.lastGazeCoord;
 		}
 	}
 
