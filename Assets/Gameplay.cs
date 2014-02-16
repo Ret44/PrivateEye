@@ -5,19 +5,30 @@ public class Gameplay : MonoBehaviour {
 
 	public static Gameplay Instance;
 	public GameObject RockPrefab;
+	public GameObject ExploPrefab;
+	public GameObject RockHit;
+	public int Mothership;
 	public int Hull;
 	public int Score;
+	public GUIText GUIMothership; 
 	public GUIText GUIHull;
 	public GUIText GUIScore;
 	public bool PlayerAlive;
 	public float RockSpawnDelay;
 
+	public AudioSource SoundRockHit;
+	public AudioSource SoundBulletShot;
+	public AudioSource SoundGotHit;
+	public AudioSource SoundDestroyRock;
+
 	// Use this for initialization
 	void Start () {
 		Gameplay.Instance = this;
-		Hull = 50;
+		Hull = 30;
+		Mothership = 50;
 		Score = 0;
-		Gameplay.ChangeHull(50);
+		Gameplay.ChangeMothership (50);
+		Gameplay.ChangeHull(30);
 		PlayerAlive = true;
 		RockSpawnDelay = Time.time + 5f;
 		Gameplay.ChangeScore (0);
@@ -46,6 +57,15 @@ public class Gameplay : MonoBehaviour {
 		for (int i=0; i<Gameplay.Instance.Hull; i++)
 			Gameplay.Instance.GUIHull.text += "|";
 
+	}
+
+	public static void ChangeMothership(int val)
+	{
+		Gameplay.Instance.Mothership += val;
+		Gameplay.Instance.GUIHull.text = "MOTHERSHIP:";
+		for (int i=0; i<Gameplay.Instance.Mothership; i++)
+			Gameplay.Instance.GUIHull.text += "|";
+		
 	}
 	// Update is called once per frame
 	void Update () {

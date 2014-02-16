@@ -54,5 +54,6 @@ public class shootBullets : MonoBehaviour {
 	void shoot(){
 		var blast = Instantiate(blastPrefab, transform.position, Quaternion.identity) as GameObject;
 		blast.rigidbody2D.velocity = new Vector2(9f, 0f);
+		Gameplay.Instance.SoundBulletShot.Play ();
 	}
 }
