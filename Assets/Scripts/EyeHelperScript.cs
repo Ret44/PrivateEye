@@ -34,7 +34,7 @@ public class EyeHelperScript : MonoBehaviour, IGazeListener {
 			Vector3 planeCoord = Camera.main.ScreenToWorldPoint(screenPoint);
 			this.transform.position = planeCoord;
 			lastGazeCoord = screenPoint;	
-			Debug.Log (lastGazeCoord.ToString());
+			//Debug.Log (lastGazeCoord.ToString());
 		}
 	}
 

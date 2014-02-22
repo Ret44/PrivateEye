@@ -52,9 +52,11 @@
      <Compile Include="Assets\Scripts\GazeCamera.cs" />
      <Compile Include="Assets\Scripts\GazeDataValidator.cs" />
      <Compile Include="Assets\Scripts\UnityGazeUtils.cs" />
+     <Compile Include="Assets\Scripts\powerup.cs" />
      <Compile Include="Assets\Scripts\shootBullets.cs" />
      <Compile Include="Assets\blast.cs" />
      <Compile Include="Assets\rock.cs" />
+     <Compile Include="Assets\rockForceField.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />

@@ -1,14 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EyeHelperScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Gameplay.cs">
     <Files>
-      <File FileName="Assets\Scripts\shootBullets.cs" Line="40" Column="65" />
-      <File FileName="Assets\Scripts\EyeHelperScript.cs" Line="36" Column="33" />
+      <File FileName="Assets\Gameplay.cs" Line="1" Column="1" />
+      <File FileName="Assets\Gameplay.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\shootBullets.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EyeHelperScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GazeCamera.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\UnityGazeUtils.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\shootBullets.cs" Line="59" Column="1" />
-      <File FileName="Assets\Scripts\CalibCamera.cs" Line="137" Column="18" />
-      <File FileName="Assets\rock.cs" Line="20" Column="45" />
+      <File FileName="Assets\Scripts\CalibCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\rock.cs" Line="9" Column="30" />
+      <File FileName="Assets\rockForceField.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\powerup.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -9,9 +9,9 @@ public class shootBullets : MonoBehaviour {
 	//movement config
 	private float vx = 0f;
 	private float vy = 0f;
-	private float acc = 1.9f;
-	private float damp = 0.76f;
-	private float shootDelay = 0.4f;
+	private float acc = 1.5f;
+	private float damp = 0.74f;
+	private float shootDelay = 0.25f;
 	
 	//frame config
 //	private float boxTop = 5f;
@@ -28,7 +28,21 @@ public class shootBullets : MonoBehaviour {
 	void Start () {
 	
 	}
-	
+
+	void OnTriggerEnter2D(Collider2D col){
+		//Debug.Log (col.tag);
+		if(col.tag == "rock"){
+			float Modifier = this.transform.localScale.x - 1.0f;
+			Gameplay.Instance.SoundDestroyRock.pitch = (1-Modifier) + 0.7f;
+			Gameplay.Instance.SoundDestroyRock.Play ();
+			Instantiate(Gameplay.Instance.ExploPrefab,col.gameObject.transform.position,Quaternion.identity);
+			Destroy(col.gameObject);	
+			Instantiate(Gameplay.Instance.ShipExplo,this.transform.position,Quaternion.identity);
+			Destroy (this.gameObject);
+			Gameplay.Instance.SoundGotHit.Play ();
+			Gameplay.GameOverScreenShow();
+		}
+	}
 
 	void Update () {
 		vx += Input.GetAxis("Horizontal") * acc * Time.deltaTime;
@@ -54,6 +68,7 @@ public class shootBullets : MonoBehaviour {
 	void shoot(){
 		var blast = Instantiate(blastPrefab, transform.position, Quaternion.identity) as GameObject;
 		blast.rigidbody2D.velocity = new Vector2(9f, 0f);
+		Gameplay.Instance.SoundBulletShot.pitch = UnityEngine.Random.Range (0.85f, 1.15f);
 		Gameplay.Instance.SoundBulletShot.Play ();
 	}
 }
